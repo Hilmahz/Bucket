@@ -4,129 +4,640 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hill's Buket</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
     <style>
-        body { font-family: 'Poppins', sans-serif; }
-        .text-primary { color: #6d28d9 !important; }
-        .bg-primary { background-color: #6d28d9 !important; }
-        .btn-primary { background-color: #6d28d9; border-color: #6d28d9; }
-        .btn-primary:hover { background-color: #8b5cf6; border-color: #8b5cf6; }
-        .icon-box { width: 70px; height: 70px; display: inline-flex; align-items: center; justify-content: center; border-radius: 12px; }
-        .card { transition: all 0.3s ease; border-radius: 12px; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
-        .social-icons a { transition: all 0.3s ease; color: white; text-decoration: none; margin: 0 10px; }
-        .social-icons a:hover { color: #8b5cf6 !important; transform: translateY(-3px); }
-        #countdown { font-family: 'Courier New', monospace; font-size: 1.5rem; font-weight: bold; }
+        /* Konten dari style.css */
+        :root {
+            --primary: #6d28d9;
+            --primary-light: #8b5cf6;
+            --dark: #1e293b;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #334155;
+        }
+
+        .hero-section {
+            background-color: #f8fafc;
+            padding-top: 80px !important;
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--primary) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary-light);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+
+        .card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icons a {
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary) !important;
+            transform: translateY(-3px);
+        }
+
+        /* Countdown timer */
+        #countdown {
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                text-align: center;
+                padding-top: 60px !important;
+            }
+            
+            .hero-section img {
+                margin-top: 30px;
+            }
+        }
     </style>
 </head>
 <body>
-
-<!-- Hero Section -->
-<section class="hero-section py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h1 class="display-4 fw-bold mb-4">Buket Bunga Eksklusif dari <span class="text-primary">Hill's Buket</span></h1>
-                <p class="lead mb-4">Tampil istimewa di setiap momen spesial. Temukan buket bunga cantik dengan sentuhan elegan dan eksklusif.</p>
-                <a href="https://wa.me/6285794381488" target="_blank" class="btn btn-primary btn-lg">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="Hill's Buket" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                </ul>
+                <a href="https://wa.me/6281234567890" class="btn btn-primary ms-3">
                     <i class="bi bi-whatsapp"></i> Pesan Sekarang
                 </a>
             </div>
-            <div class="col-lg-6 text-center">
-                <img src="https://via.placeholder.com/500x350.png?text=Hill's+Buket" alt="Hill's Buket" class="img-fluid rounded shadow">
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Buket Bunga Eksklusif dari <span class="text-primary">Hill's Buket</span></h1>
+                    <p class="lead mb-4">Hadirkan kebahagiaan dengan buket bunga premium kami yang dirancang khusus untuk moment spesial Anda.</p>
+                    <div class="d-flex gap-3">
+                        <a href="https://wa.me/6281234567890" class="btn btn-primary btn-lg">
+                            <i class="bi bi-whatsapp"></i> Pesan Sekarang
+                        </a>
+                        <a href="#produk" class="btn btn-outline-primary btn-lg">Lihat Katalog</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/hilma.jpg" alt="Hill's Buket" class="img-fluid rounded shadow">
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Countdown -->
-<section class="bg-primary text-white py-4 text-center">
-    <div class="container">
-        <h5>Penawaran berakhir dalam:</h5>
-        <div id="countdown"></div>
-    </div>
-</section>
-
-<!-- Produk Section -->
-<section class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5">Produk Unggulan Kami</h2>
-        <div class="row g-4">
-
-            <!-- Produk 1 -->
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/400x300.png?text=Buket+Mawar" class="card-img-top" alt="Buket Mawar">
-                    <div class="card-body">
-                        <h5 class="card-title">Buket Mawar Romantis</h5>
-                        <p class="card-text">Tersedia dalam berbagai warna dengan aroma khas yang menenangkan.</p>
-                        <a href="https://wa.me/6285794381488" class="btn btn-primary w-100">Pesan via WhatsApp</a>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1">
+                    <h2 class="fw-bold mb-4">Kenapa Memilih <span class="text-primary">Hill's Buket</span>?</h2>
+                    <p>Hill's Buket adalah toko bunga premium yang berkomitmen untuk memberikan pengalaman berbelanja bunga yang berbeda. Kami menggunakan bahan-bahan terbaik dan desain eksklusif untuk setiap buket yang kami buat.</p>
+                    <p>Setiap bunga dipilih dengan cermat untuk memastikan kesegaran dan keindahannya bertahan lebih lama. Kami percaya bahwa setiap momen spesial layak mendapatkan sentuhan istimewa.</p>
+                    <div class="mt-4">
+                        <a href="#produk" class="btn btn-primary">Lihat Produk Kami</a>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Produk 2 -->
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/400x300.png?text=Buket+Uang" class="card-img-top" alt="Buket Uang">
-                    <div class="card-body">
-                        <h5 class="card-title">Buket Uang Elegan</h5>
-                        <p class="card-text">Cocok untuk wisuda, ulang tahun, atau kejutan istimewa lainnya.</p>
-                        <a href="https://wa.me/6285794381488" class="btn btn-primary w-100">Pesan via WhatsApp</a>
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Keunggulan <span class="text-primary">Hill's Buket</span></h2>
+                <p class="lead">Apa yang membuat kami berbeda dari yang lain?</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary mb-4">
+                                <i class="bi bi-flower1 fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold">Bunga Segar Premium</h5>
+                            <p>Kami hanya menggunakan bunga segar kualitas premium yang dipilih langsung dari petani terbaik.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary mb-4">
+                                <i class="bi bi-gem fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold">Desain Eksklusif</h5>
+                            <p>Setiap buket dirancang oleh florist profesional dengan sentuhan personal sesuai keinginan Anda.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary mb-4">
+                                <i class="bi bi-truck fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold">Pengiriman Cepat</h5>
+                            <p>Pesanan Anda akan diproses segera dan dikirim dengan hati-hati untuk memastikan kesegaran bunga.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Produk 3 -->
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/400x300.png?text=Buket+Snack" class="card-img-top" alt="Buket Snack">
-                    <div class="card-body">
-                        <h5 class="card-title">Buket Snack Unik</h5>
-                        <p class="card-text">Isi snack favorit pilihan dengan kemasan menarik dan kreatif.</p>
-                        <a href="https://wa.me/6285794381488" class="btn btn-primary w-100">Pesan via WhatsApp</a>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">5 Alasan Memilih <span class="text-primary">Hill's Buket</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div class="me-4 text-primary">
+                            <i class="bi bi-check-circle-fill fs-3"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Kualitas Terjamin</h5>
+                            <p>Kami memiliki standar kualitas tinggi untuk setiap buket yang kami produksi. Bunga yang layu atau tidak segar akan diganti.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div class="me-4 text-primary">
+                            <i class="bi bi-check-circle-fill fs-3"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Harga Kompetitif</h5>
+                            <p>Dengan kualitas premium, kami menawarkan harga yang sangat kompetitif dibandingkan toko bunga lainnya.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div class="me-4 text-primary">
+                            <i class="bi bi-check-circle-fill fs-3"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Kustomisasi Mudah</h5>
+                            <p>Anda bisa memesan buket dengan desain khusus sesuai keinginan dan kebutuhan Anda.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div class="me-4 text-primary">
+                            <i class="bi bi-check-circle-fill fs-3"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Pelayanan Ramah</h5>
+                            <p>Tim kami siap membantu Anda dengan ramah dan profesional dari konsultasi hingga setelah pembelian.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mx-auto">
+                    <div class="d-flex">
+                        <div class="me-4 text-primary">
+                            <i class="bi bi-check-circle-fill fs-3"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Garansi Kepuasan</h5>
+                            <p>Kami memberikan garansi kepuasan 100%. Jika tidak puas, kami akan mengganti atau mengembalikan uang Anda.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Footer -->
-<footer class="bg-primary text-white text-center py-4">
-    <div class="container">
-        <p class="mb-2">© 2025 Hill's Buket. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="https://tiktok.com" target="_blank"><i class="bi bi-tiktok"></i></a>
+    <section id="produk" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Koleksi <span class="text-primary">Hill's Buket</span></h2>
+                <p class="lead">Pilihan buket eksklusif untuk berbagai kesempatan</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/Money and Flowers.jpg" class="card-img-top" alt="Money and Flowers">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Money and Flowers</h5>
+                            <p class="card-text text-muted">Rangkaian klasik pecahan uang 50.000 dengan tambahan bunga tulip untuk mengekspresikan perasaan terdalam anda .</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">Rp 1.035.000</span>
+                                <a href="https://wa.me/6281234567890?text=Saya%20tertarik%20dengan%20produk%20Money%20and%20Flowers%20di%20Hill's%20Buket" class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-cart-plus"></i> Pesan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/Candy Snack.jpg" class="card-img-top" alt="Candy Snack">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Candy Snack</h5>
+                            <p class="card-text text-muted">Perpaduan snack dan roko dengan memakai tambahan permen kiss.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">Rp 75.000</span>
+                                <a href="https://wa.me/6281234567890?text=Saya%20tertarik%20dengan%20produk%20Candy%20Snack%20di%20Hill's%20Buket" class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-cart-plus"></i> Pesan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/Monay Bouquet.jpg" class="card-img-top" alt="Monay Bouquet">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Monay Bouquet</h5>
+                            <p class="card-text text-muted">Bunga tulip yang anggun ditata dengan tambahan pecahan uang 5000 dengan berbentuk kerucut.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">Rp 140.000</span>
+                                <a href="https://wa.me/6281234567890?text=Saya%20tertarik%20dengan%20produk%20Monay%20Bouquet%20di%20Hill's%20Buket" class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-cart-plus"></i> Pesan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/Buket Money Bear.jpg" class="card-img-top" alt="Buket Money Bear">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Buket Money Bear</h5>
+                            <p class="card-text text-muted">Perpaduan Boneka Beruang dan Uang 50.000 dengan Hiasan Menarik.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">Rp 380.000</span>
+                                <a href="https://wa.me/6281234567890?text=Saya%20tertarik%20dengan%20produk%20Buket%20Money%20Bear%20di%20Hill's%20Buket" class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-cart-plus"></i> Pesan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="https://wa.me/6281234567890" class="btn btn-primary btn-lg">
+                    <i class="bi bi-whatsapp"></i> Konsultasi Desain Custom
+                </a>
+            </div>
         </div>
-    </div>
-</footer>
+    </section>
 
-<!-- JavaScript -->
-<script>
-    // Countdown timer
-    function updateCountdown() {
-        const now = new Date();
-        const endOfDay = new Date();
-        endOfDay.setHours(23, 59, 59, 999);
-        const diff = endOfDay - now;
+    <section id="testimoni" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Apa Kata Mereka Tentang <span class="text-primary">Hill's Buket</span></h2>
+                <p class="lead">Testimoni dari pelanggan yang sudah merasakan kualitas kami</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Testimoni" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Sarah Wijaya</h6>
+                                    <div class="text-warning">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mb-0">"Buketnya sangat cantik dan fresh! Pacar saya sangat terkesan. Pengiriman juga tepat waktu. Terima kasih Hill's Buket!"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Testimoni" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Budi Santoso</h6>
+                                    <div class="text-warning">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mb-0">"Pertama kali pesan buket bunga untuk istri, hasilnya melebihi ekspektasi. Harumnya tahan lama dan packingnya sangat rapi."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Testimoni" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Dewi Lestari</h6>
+                                    <div class="text-warning">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mb-0">"Desain buketnya unik dan berbeda dari toko bunga lain. Customer servicenya juga sangat membantu dalam memilih rangkaian bunga."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="fw-bold mb-3">Pesan Sekarang dan Dapatkan Bonus Spesial!</h2>
+                    <p class="lead mb-4">Untuk 10 pembeli pertama hari ini, dapatkan GRATIS kartu ucapan premium dan packaging eksklusif!</p>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="me-3">
+                            <i class="bi bi-gift-fill fs-1"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Bonus Spesial Hari Ini:</h5>
+                            <ul class="mb-0">
+                                <li>Kartu ucapan premium senilai Rp 50.000</li>
+                                <li>Packaging eksklusif limited edition</li>
+                                <li>Free konsultasi bunga selama 1 bulan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="bg-white text-dark p-4 rounded shadow">
+                        <h5 class="fw-bold mb-3">Hanya tersisa:</h5>
+                        <div id="countdown" class="display-4 fw-bold text-primary mb-3">00:00:00</div>
+                        <a href="https://wa.me/6281234567890" class="btn btn-primary btn-lg w-100">
+                            <i class="bi bi-whatsapp"></i> Dapatkan Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        document.getElementById('countdown').textContent =
-            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    }
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="fw-bold mb-4">Siap Memberikan Kejutan Spesial untuk Orang Terkasih?</h2>
+                    <p class="lead mb-5">Pesan sekarang dan dapatkan buket bunga eksklusif yang akan membuat moment Anda semakin berkesan.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://wa.me/6281234567890" class="btn btn-primary btn-lg px-4">
+                            <i class="bi bi-whatsapp"></i> Pesan via WhatsApp
+                        </a>
+                        <a href="tel:6281234567890" class="btn btn-outline-primary btn-lg px-4">
+                            <i class="bi bi-telephone"></i> Hubungi Kami
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="assets/images/guarantee.jpg" alt="Garansi" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <div class="ps-lg-5">
+                        <h2 class="fw-bold mb-4">Garansi Kepuasan 100%</h2>
+                        <p>Kami begitu yakin dengan kualitas produk kami sehingga kami berani memberikan garansi kepuasan 100%.</p>
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="bi bi-check-circle-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold">Garansi Kesegaran</h5>
+                                <p class="mb-0">Jika bunga yang Anda terima tidak segar, kami akan menggantinya tanpa biaya tambahan.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="bi bi-check-circle-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold">Garansi Ketepatan Waktu</h5>
+                                <p class="mb-0">Jika pesanan Anda terlambat, Anda berhak mendapatkan kompensasi sesuai kebijakan kami.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-3 text-primary">
+                                <i class="bi bi-check-circle-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold">Garansi Kepuasan</h5>
+                                <p class="mb-0">Jika tidak puas dengan produk kami, Anda bisa meminta pengembalian dana.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h3 class="fw-bold mb-4">Perhatian!</h3>
+                    <p>Produk kami dibuat berdasarkan pesanan (pre-order) untuk memastikan kesegaran bunga. Disarankan untuk memesan minimal 2 hari sebelum pengiriman untuk hasil terbaik.</p>
+                    <p>Stok bunga dapat berubah sesuai musim dan ketersediaan di pasar bunga. Kami akan menginformasikan jika ada perubahan pada pesanan Anda.</p>
+                    <a href="https://wa.me/6281234567890" class="btn btn-light btn-lg mt-3">
+                        <i class="bi bi-whatsapp"></i> Tanya Stok & Ketersediaan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="assets/images/logo.png" alt="Hill's Buket" height="40" class="mb-3">
+                    <p>Hill's Buket adalah toko bunga premium yang berkomitmen memberikan pengalaman berbelanja bunga yang berbeda dengan kualitas terbaik.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-tiktok fs-4"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-whatsapp fs-4"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="fw-bold mb-4">Tautan Cepat</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#produk" class="text-white text-decoration-none">Produk</a></li>
+                        <li class="mb-2"><a href="#testimoni" class="text-white text-decoration-none">Testimoni</a></li>
+                        <li class="mb-2"><a href="#faq" class="text-white text-decoration-none">FAQ</a></li>
+                        <li><a href="#kontak" class="text-white text-decoration-none">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="fw-bold mb-4">Kontak Kami</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex">
+                            <i class="bi bi-geo-alt-fill me-3"></i>
+                            <span>Jl. Bunga Indah No. 123, Jakarta</span>
+                        </li>
+                        <li class="mb-3 d-flex">
+                            <i class="bi bi-telephone-fill me-3"></i>
+                            <span>6281234567890</span>
+                        </li>
+                        <li class="d-flex">
+                            <i class="bi bi-envelope-fill me-3"></i>
+                            <span>hello@hillsbuket.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="fw-bold mb-4">Jam Operasional</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Senin - Jumat: 09.00 - 18.00</li>
+                        <li class="mb-2">Sabtu: 09.00 - 15.00</li>
+                        <li>Minggu & Hari Libur: Tutup</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Hill's Buket. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Made with <i class="bi bi-heart-fill text-danger"></i> in Jakarta</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Konten dari script.js
+        // Countdown timer for urgency section
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            if (!countdownElement) return;
+
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+            
+            const diff = endOfDay - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            countdownElement.textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Update countdown every second
+        if (document.getElementById('countdown')) {
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Note: There are no actual <form> elements in the HTML to handle.
+            // This code is kept from the original script.js file.
+            const forms = document.querySelectorAll('form');
+            
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Here you would typically send the form data to your server
+                    // For this example, we'll just show an alert
+                    alert('Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.');
+                    form.reset();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
